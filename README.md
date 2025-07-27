@@ -8,7 +8,8 @@ Programs that deal with the Old Saxon (Old Low German) language
     <li><link>https://en.wikipedia.org/wiki/Old_Saxon_phonology</link></li><br>
     <li>Manganella, G. (1976). L'anglosassone e il sassone antico: Grammatica. Napoli: Liguori.
   </ul>
-Standardization: 
+Standardization:
+
   <ul>
     <li>Tiefenbach, H. (2010). Altsächsisches Handwörterbuch / A Concise Old Saxon Dictionary. Germania: De Gruyter.</li><br>
   </ul>

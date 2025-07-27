@@ -2,7 +2,7 @@
 Programs that deal with the Old Saxon (Old Low German) language
 
 <h1><b>osx-to-ipa.html</b></h1> [unfinished] 
-<p>Implements IPA conversion from a standardized Old Saxon format. Potentially useful for comparative and historical linguistic analyses.</p>
+<p>Implements IPA conversion from a standardized Old Saxon format. Potentially useful for comparative and historical linguistics analyses.</p>
 <p>Rules for conversion: 
   <ul>
     <li><link>https://en.wikipedia.org/wiki/Old_Saxon_phonology</link></li><br>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Copy, Check, Trash2, ArrowRight } from 'lucide-react';
+import { Copy, Check, Trash2, ArrowRight, X } from 'lucide-react';
 
 // Phoneme categories
 const nasals = ['m', 'n'];
 const plosives = ['p', 'b', 't', 'd', 'k', 'g'];
-const fricatives = ['f', 'v', 'θ', 'ð', 'ɣ', 'x', 'h'];
-const voicedFricatives = ['v', 'ð', 'ɣ'];
-const voicelessFricatives = ['f', 'θ', 'x'];
+const fricatives = ['f', 'v', 'ƀ', 'θ', 'ð', 'đ', 'ɣ', 'x', 'h'];
+const voicedFricatives = ['v', 'ƀ', 'ð', 'đ', 'ɣ'];
+//const voicelessFricatives = ['f', 'θ', 'x'];
 const sibilants = ['s', 'z'];
 const approximants = ['w', 'l', 'j'];
 const rhotic = ['r'];
@@ -14,13 +14,17 @@ const voicelessCons = ['p','t','k','f','θ','s','x','h'];
 
 const consonants = [...nasals, ...plosives, ...fricatives, ...sibilants, ...approximants, ...rhotic];
 
-const frontVowels = {'e': 'ɛ', 'ê': 'ɛ:', 'ē': 'e:', 'i': 'ɪ', 'ī': 'i:'};
-const backVowels = {'a': 'ɑ', 'ā': 'ɑ:', 'o': 'ɔ', 'ô': 'ɔ:', 'ō': 'o:', 'u': 'ʊ', 'ū': 'u:'};
+const frontVowels = {'e': 'ɛ', 'ê': 'ɛ:', 'ē': 'e:', 'i': 'ɪ', 'ī': 'i:', 'î': 'i:'};
+const backVowels = {'a': 'ɑ', 'ā': 'ɑ:', 'o': 'ɔ', 'ô': 'ɔ:', 'ō': 'o:', 'u': 'ʊ', 'ū': 'u:', 'û': 'u:'};
 const diphthongs = {'ai': 'ɛ:', 'au': 'ɔ:'};
 
 function toIPA(word) {
   word = word.toLowerCase();
 
+  // Normalize characters
+  word = word.replace(/ė/g, 'e')
+  word = word.replace(/ƀ/g, 'v');
+  word = word.replace(/đ/g, 'ð');
   word = word.replace(/th/g, 'θ');
 
   for (let [latin, ipa] of Object.entries(diphthongs)) {
@@ -207,14 +211,34 @@ export default function PhoneticConverter() {
               <label className="block text-purple-100 font-medium mb-2 text-sm">
                 Old Saxon Word
               </label>
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleConvert()}
-                placeholder="Enter a word (e.g., werthan)"
-                className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-lg"
-              />
+              <div className="relative">
+                <textarea
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && !e.shiftKey && handleConvert()}
+                  placeholder="Enter Old Saxon text (max. 500 characters)"
+                  maxLength={500}
+                  rows={1}
+                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-lg pr-12 resize-none overflow-hidden"
+                  style={{ minHeight: '3rem' }}
+                  onInput={(e) => {
+                    e.target.style.height = 'auto';
+                    e.target.style.height = e.target.scrollHeight + 'px';
+                  }}
+                />
+                {input && (
+                  <button
+                    onClick={() => setInput('')}
+                    className="absolute right-2 top-3 p-2 hover:bg-white/10 rounded-lg transition-colors"
+                    title="Clear input"
+                  >
+                    <X className="text-purple-200" size={20} />
+                  </button>
+                )}
+              </div>
+              <div className="text-right text-xs text-purple-200 mt-1">
+                {input.length}/500
+              </div>
             </div>
 
             {/* Arrow */}
@@ -231,12 +255,12 @@ export default function PhoneticConverter() {
                   IPA Transcription
                 </label>
                 <div className="relative">
-                  <div className="w-full px-4 py-3 bg-purple-500/30 border border-purple-400/50 rounded-lg text-white text-2xl font-mono">
+                  <div className="w-full px-4 py-3 bg-purple-500/30 border border-purple-400/50 rounded-lg text-white text-2xl font-mono break-words min-h-[3rem]">
                     {output}
                   </div>
                   <button
                     onClick={() => handleCopy(output)}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 p-2 hover:bg-white/10 rounded-lg transition-colors"
+                    className="absolute right-2 top-3 p-2 hover:bg-white/10 rounded-lg transition-colors"
                     title="Copy to clipboard"
                   >
                     {copied ? (
@@ -311,11 +335,6 @@ export default function PhoneticConverter() {
             </div>
           </div>
         )}
-
-        {/* Footer */}
-        <div className="text-center mt-8 text-purple-200 text-sm">
-          <p>Old Saxon (Old Low German) phonetic transcription tool</p>
-        </div>
       </div>
     </div>
   );

@@ -38,12 +38,10 @@ function toIPA(word) {
   let chars = word.split('');
   let prefix = false;
 
-  for (let i = 0; i < chars.length - 2; i++) {
-    if (chars[i] === 'b' && chars[i + 1] === 'i' && chars[i + 2] === 'f') {
-      prefix = true;
-      chars.splice(i, 2);
-      break;
-    }
+  // Check if word STARTS with "bif" (prefix should only be at the beginning)
+  if (chars.length >= 3 && chars[0] === 'b' && chars[1] === 'i' && chars[2] === 'f') {
+    prefix = true;
+    chars.splice(0, 2); // Remove 'b' and 'i', keep 'f'
   }
 
   chars = chars.map(ch => {

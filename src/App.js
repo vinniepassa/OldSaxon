@@ -34,6 +34,9 @@ function toIPA(word) {
   // uu at word start + vowel → w + vowel
   word = word.replace(/^uu([aeiouāēīōūâêîôûė])/g, 'w$1');
 
+  // Rule 3: uu at word start + consonant → w + consonant
+  word = word.replace(/^uu([bcdfghjklmnpqrstvwxzθðƀđɣ])/g, 'w$1');
+
   // vowel + uu + vowel → vowel + w + vowel
   word = word.replace(/([aeiouāēīōūâêîôûė])uu([aeiouāēīōūâêîôûė])/g, '$1w$2');
 

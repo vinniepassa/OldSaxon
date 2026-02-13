@@ -22,10 +22,20 @@ function toIPA(word) {
   word = word.toLowerCase().replace(/[0-9]/g, '');
 
   // Normalize characters
+  word = word.replace(/c/g, 'k')
   word = word.replace(/ė/g, 'e')
   word = word.replace(/ƀ/g, 'v');
   word = word.replace(/đ/g, 'ð');
   word = word.replace(/th/g, 'θ');
+
+  // uuu → uw (3 contiguous u's)
+  word = word.replace(/uuu/g, 'uw');
+
+  // uu + consonant + vowel → w + consonant + vowel
+  word = word.replace(/uu([bcdfghjklmnpqrstvwxzθðƀđɣ])([aeiouāēīōūâêîôûėė])/g, 'w$1$2');
+
+  // uu + two consonants → wu + two consonants
+  word = word.replace(/uu([bcdfghjklmnpqrstvwxzθðƀđɣ]{2})/g, 'wu$1');
 
   for (let [latin, ipa] of Object.entries(diphthongs)) {
     word = word.replace(new RegExp(latin, 'g'), ipa);

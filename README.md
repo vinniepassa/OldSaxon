@@ -64,9 +64,6 @@ cd old-saxon-ipa
 npm install
 npm install lucide-react
 
-# Replace src/App.jsx with phonetic-converter.jsx
-# (Copy the phonetic-converter.jsx file to src/App.jsx)
-
 # Start the development server
 npm run dev
 ```

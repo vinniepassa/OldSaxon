@@ -153,12 +153,15 @@ function toIPA(word) {
 }
 
 function processText(text) {
+  // Remove digits first
+  text = text.replace(/[0-9]/g, '');
+  
   // Split on whitespace and punctuation, but preserve them
   const tokens = text.split(/(\s+|[.,·;:!?'\[\]()]+)/);
   
   return tokens.map(token => {
     // Only process tokens that are actual words (not whitespace/punctuation)
-    if (/^[a-zA-Zāēīōūâêîôûėƀđθðɣ]+$/.test(token)) {
+    if (/^[a-zA-Zāēīōūâêîôûėäëïöüƀđθðɣ]+$/.test(token)) {
       return toIPA(token);
     }
     return token;

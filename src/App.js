@@ -15,11 +15,11 @@ const voicelessCons = ['p','t','k','f','θ','s','x','h'];
 const consonants = [...nasals, ...plosives, ...fricatives, ...sibilants, ...approximants, ...rhotic];
 
 const frontVowels = {'e': 'ɛ', 'ê': 'ɛ:', 'ē': 'e:', 'i': 'ɪ', 'ī': 'i:', 'î': 'i:'};
-const backVowels = {'a': 'ɑ', 'ā': 'ɑ:', 'o': 'ɔ', 'ô': 'ɔ:', 'ō': 'o:', 'u': 'ʊ', 'ū': 'u:', 'û': 'u:'};
+const backVowels = {'a': 'ɑ', 'ā': 'ɑ:', 'â': 'ɑ:', 'o': 'ɔ', 'ô': 'ɔ:', 'ō': 'o:', 'u': 'ʊ', 'ū': 'u:', 'û': 'u:'};
 const diphthongs = {'ai': 'ɛ:', 'au': 'ɔ:'};
 
 function toIPA(word) {
-  word = word.toLowerCase();
+  word = word.toLowerCase().replace(/[0-9]/g, '');
 
   // Normalize characters
   word = word.replace(/ė/g, 'e')

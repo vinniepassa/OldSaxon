@@ -209,7 +209,7 @@ export default function PhoneticConverter() {
             {/* Input Section */}
             <div>
               <label className="block text-purple-100 font-medium mb-2 text-sm">
-                Old Saxon Word
+                Old Saxon text
               </label>
               <div className="relative">
                 <textarea
@@ -252,7 +252,7 @@ export default function PhoneticConverter() {
             {output && (
               <div>
                 <label className="block text-purple-100 font-medium mb-2 text-sm">
-                  IPA Transcription
+                  IPA transcription
                 </label>
                 <div className="relative">
                   <div className="w-full px-4 py-3 bg-purple-500/30 border border-purple-400/50 rounded-lg text-white text-2xl font-mono break-words min-h-[3rem]">

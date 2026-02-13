@@ -31,8 +31,11 @@ function toIPA(word) {
   // uuu → uw (3 contiguous u's)
   word = word.replace(/uuu/g, 'uw');
 
+  // uu at word start + vowel → w + vowel
+  word = word.replace(/^uu([aeiouāēīōūâêîôûė])/g, 'w$1');
+
   // uu + consonant + vowel → w + consonant + vowel
-  word = word.replace(/uu([bcdfghjklmnpqrstvwxzθðƀđɣ])([aeiouāēīōūâêîôûėė])/g, 'w$1$2');
+  word = word.replace(/uu([bcdfghjklmnpqrstvwxzθðƀđɣ])([aeiouāēīōūâêîôûė])/g, 'w$1$2');
 
   // uu + two consonants → wu + two consonants
   word = word.replace(/uu([bcdfghjklmnpqrstvwxzθðƀđɣ]{2})/g, 'wu$1');

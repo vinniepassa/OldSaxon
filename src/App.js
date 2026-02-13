@@ -21,30 +21,19 @@ const diphthongs = {'ai': 'ɛ:', 'au': 'ɔ:'};
 function toIPA(word) {
   word = word.toLowerCase().replace(/[0-9]/g, '');
 
+  word = word.replace(/uuu/g, 'uw');
+  word = word.replace(/^uu(?=[aeiouāēīōūâêîôûėäëïöü])/g, 'w');
+  word = word.replace(/^uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ])/g, 'w');
+  word = word.replace(/([aeiouāēīōūâêîôûėäëïöü])uu(?=[aeiouāēīōūâêîôûėäëïöü])/g, '$1w');
+  word = word.replace(/uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ][aeiouāēīōūâêîôûėäëïöü])/g, 'w');
+  word = word.replace(/uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ]{2})/g, 'wu');
+
   // Normalize characters
   word = word.replace(/c/g, 'k')
   word = word.replace(/ė/g, 'e')
   word = word.replace(/ƀ/g, 'v');
   word = word.replace(/đ/g, 'ð');
   word = word.replace(/th/g, 'θ');
-
-  // uuu → uw (3 contiguous u's)
-  word = word.replace(/uuu/g, 'uw');
-
-  // uu at word start + vowel → w + vowel
-  word = word.replace(/^uu([aeiouāēīōūâêîôûė])/g, 'w$1');
-
-  // Rule 3: uu at word start + consonant → w + consonant
-  word = word.replace(/^uu([bcdfghjklmnpqrstvwxzθðƀđɣ])/g, 'w$1');
-
-  // vowel + uu + vowel → vowel + w + vowel
-  word = word.replace(/([aeiouāēīōūâêîôûė])uu([aeiouāēīōūâêîôûė])/g, '$1w$2');
-
-  // uu + consonant + vowel → w + consonant + vowel
-  word = word.replace(/uu([bcdfghjklmnpqrstvwxzθðƀđɣ])([aeiouāēīōūâêîôûė])/g, 'w$1$2');
-
-  // uu + two consonants → wu + two consonants
-  word = word.replace(/uu([bcdfghjklmnpqrstvwxzθðƀđɣ]{2})/g, 'wu$1');
 
   for (let [latin, ipa] of Object.entries(diphthongs)) {
     word = word.replace(new RegExp(latin, 'g'), ipa);

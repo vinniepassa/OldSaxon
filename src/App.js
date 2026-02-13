@@ -152,6 +152,19 @@ function toIPA(word) {
   return chars.join('');
 }
 
+function processText(text) {
+  // Split on whitespace and punctuation, but preserve them
+  const tokens = text.split(/(\s+|[.,·;:!?'\[\]()]+)/);
+  
+  return tokens.map(token => {
+    // Only process tokens that are actual words (not whitespace/punctuation)
+    if (/^[a-zA-Zāēīōūâêîôûėƀđθðɣ]+$/.test(token)) {
+      return toIPA(token);
+    }
+    return token;
+  }).join('');
+}
+
 export default function PhoneticConverter() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
@@ -166,7 +179,7 @@ export default function PhoneticConverter() {
 
   useEffect(() => {
     if (input.trim()) {
-      const result = toIPA(input.trim());
+      const result = processText(input.trim());
       setOutput(result);
     } else {
       setOutput('');

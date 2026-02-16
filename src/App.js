@@ -221,14 +221,14 @@ export default function PhoneticConverter() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 sm:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-900 to-slate-900 p-4 sm:p-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-2">
             Old Saxon IPA Converter
           </h1>
-          <p className="text-purple-200 text-lg">
+          <p className="text-red-200 text-lg">
             Convert Old Saxon orthography to phonetic transcription
           </p>
         </div>
@@ -238,7 +238,7 @@ export default function PhoneticConverter() {
           <div className="space-y-6">
             {/* Input Section */}
             <div>
-              <label className="block text-purple-100 font-medium mb-2 text-sm">
+              <label className="block text-red-100 font-medium mb-2 text-sm">
                 Old Saxon text
               </label>
               <div className="relative">
@@ -252,7 +252,7 @@ export default function PhoneticConverter() {
                   placeholder="Enter Old Saxon text (max. 500 characters)"
                   maxLength={500}
                   rows={1}
-                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-lg pr-12 resize-none overflow-hidden"
+                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-red-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent text-lg pr-12 resize-none overflow-hidden"
                   style={{ minHeight: '3rem' }}
                 />
                 {input && (
@@ -268,11 +268,11 @@ export default function PhoneticConverter() {
                     className="absolute right-2 top-3 p-2 hover:bg-white/10 rounded-lg transition-colors"
                     title="Clear input"
                   >
-                    <X className="text-purple-200" size={20} />
+                    <X className="text-red-200" size={20} />
                   </button>
                 )}
               </div>
-              <div className="text-right text-xs text-purple-200 mt-1">
+              <div className="text-right text-xs text-red-200 mt-1">
                 {input.length}/500
               </div>
             </div>
@@ -280,18 +280,18 @@ export default function PhoneticConverter() {
             {/* Arrow */}
             {output && (
               <div className="flex justify-center">
-                <ArrowRight className="text-purple-300" size={32} />
+                <ArrowRight className="text-red-300" size={32} />
               </div>
             )}
 
             {/* Output Section */}
             {output && (
               <div>
-                <label className="block text-purple-100 font-medium mb-2 text-sm">
+                <label className="block text-red-100 font-medium mb-2 text-sm">
                   IPA transcription
                 </label>
                 <div className="relative">
-                  <div className="w-full px-4 py-3 bg-purple-500/30 border border-purple-400/50 rounded-lg text-white text-2xl font-mono break-words min-h-[3rem]">
+                  <div className="w-full px-4 py-3 bg-red-500/30 border border-red-400/50 rounded-lg text-white text-2xl font-mono break-words min-h-[3rem]">
                     {output}
                   </div>
                   <button
@@ -302,7 +302,7 @@ export default function PhoneticConverter() {
                     {copied ? (
                       <Check className="text-green-300" size={20} />
                     ) : (
-                      <Copy className="text-purple-200" size={20} />
+                      <Copy className="text-red-200" size={20} />
                     )}
                   </button>
                 </div>
@@ -313,7 +313,7 @@ export default function PhoneticConverter() {
             <button
               onClick={handleConvert}
               disabled={!input.trim()}
-              className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl"
+              className="w-full py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-pink-600 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl"
             >
               Add to History
             </button>
@@ -328,7 +328,7 @@ export default function PhoneticConverter() {
               <button
                 key={idx}
                 onClick={() => handleExampleClick(example)}
-                className="px-4 py-2 bg-white/20 hover:bg-white/30 text-purple-100 rounded-lg transition-colors text-sm"
+                className="px-4 py-2 bg-white/20 hover:bg-white/30 text-red-100 rounded-lg transition-colors text-sm"
               >
                 {example}
               </button>
@@ -346,7 +346,7 @@ export default function PhoneticConverter() {
                 className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                 title="Clear history"
               >
-                <Trash2 className="text-purple-200" size={20} />
+                <Trash2 className="text-red-200" size={20} />
               </button>
             </div>
             <div className="space-y-3">
@@ -356,15 +356,15 @@ export default function PhoneticConverter() {
                   className="flex items-center justify-between p-4 bg-white/5 rounded-lg border border-white/10"
                 >
                   <div className="flex items-center space-x-4 flex-1">
-                    <span className="text-purple-200 font-medium">{entry.input}</span>
-                    <ArrowRight className="text-purple-400" size={20} />
+                    <span className="text-red-200 font-medium">{entry.input}</span>
+                    <ArrowRight className="text-red-400" size={20} />
                     <span className="text-white font-mono text-lg">{entry.output}</span>
                   </div>
                   <button
                     onClick={() => handleCopy(entry.output)}
                     className="p-2 hover:bg-white/10 rounded-lg transition-colors ml-4"
                   >
-                    <Copy className="text-purple-200" size={18} />
+                    <Copy className="text-red-200" size={18} />
                   </button>
                 </div>
               ))}

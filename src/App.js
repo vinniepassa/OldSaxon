@@ -27,6 +27,7 @@ function toIPA(word) {
   word = word.replace(/([aeiouāēīōūâêîôûė])uu(?=[aeiouāēīōūâêîôûė])/g, '$1w');
   word = word.replace(/uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ][aeiouāēīōūâêîôûė])/g, 'w');
   word = word.replace(/uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ]{2})/g, 'wu');
+  word = word.replace(/([bcdfghjklmnpqrstvwxzθðƀđɣ])uu(?=[aeiouāēīōūâêîôûėäëïöü])/g, '$1w');
 
   // Normalize characters
   word = word.replace(/c/g, 'k')

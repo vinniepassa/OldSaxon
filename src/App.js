@@ -22,10 +22,10 @@ function toIPA(word) {
   word = word.toLowerCase().replace(/[0-9]/g, '');
 
   word = word.replace(/uuu/g, 'uw');
-  word = word.replace(/^uu(?=[aeiouāēīōūâêîôûėäëïöü])/g, 'w');
-  word = word.replace(/^uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ])/g, 'w');
-  word = word.replace(/([aeiouāēīōūâêîôûėäëïöü])uu(?=[aeiouāēīōūâêîôûėäëïöü])/g, '$1w');
-  word = word.replace(/uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ][aeiouāēīōūâêîôûėäëïöü])/g, 'w');
+  word = word.replace(/^uu(?=[aeiouāēīōūâêîôûė])/g, 'w');
+  word = word.replace(/^uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ])/g, 'wu');
+  word = word.replace(/([aeiouāēīōūâêîôûė])uu(?=[aeiouāēīōūâêîôûė])/g, '$1w');
+  word = word.replace(/uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ][aeiouāēīōūâêîôûė])/g, 'w');
   word = word.replace(/uu(?=[bcdfghjklmnpqrstvwxzθðƀđɣ]{2})/g, 'wu');
 
   // Normalize characters

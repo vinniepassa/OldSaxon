@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/OldSaxon/static/css/main.af621b99.css",
-    "main.js": "/OldSaxon/static/js/main.bfa69aca.js",
+    "main.css": "/OldSaxon/static/css/main.11760689.css",
+    "main.js": "/OldSaxon/static/js/main.4d3a9f11.js",
     "static/js/453.fae962c1.chunk.js": "/OldSaxon/static/js/453.fae962c1.chunk.js",
     "index.html": "/OldSaxon/index.html",
-    "main.af621b99.css.map": "/OldSaxon/static/css/main.af621b99.css.map",
-    "main.bfa69aca.js.map": "/OldSaxon/static/js/main.bfa69aca.js.map",
+    "main.11760689.css.map": "/OldSaxon/static/css/main.11760689.css.map",
+    "main.4d3a9f11.js.map": "/OldSaxon/static/js/main.4d3a9f11.js.map",
     "453.fae962c1.chunk.js.map": "/OldSaxon/static/js/453.fae962c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.af621b99.css",
-    "static/js/main.bfa69aca.js"
+    "static/css/main.11760689.css",
+    "static/js/main.4d3a9f11.js"
   ]
 }

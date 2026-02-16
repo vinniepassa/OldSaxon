@@ -245,7 +245,7 @@ export default function PhoneticConverter() {
                   className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-lg pr-12 resize-none overflow-hidden"
                   style={{ minHeight: '3rem' }}
                   onInput={(e) => {
-                    e.target.style.height = 'auto';
+                    e.target.style.height = '3rem';
                     e.target.style.height = e.target.scrollHeight + 'px';
                   }}
                 />

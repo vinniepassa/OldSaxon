@@ -213,6 +213,13 @@ export default function PhoneticConverter() {
     setHistory([]);
   };
 
+  const adjustTextareaHeight = (element) => {
+    if (element) {
+      element.style.height = '3rem';
+      element.style.height = element.scrollHeight + 'px';
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 sm:p-8">
       <div className="max-w-4xl mx-auto">
@@ -237,21 +244,27 @@ export default function PhoneticConverter() {
               <div className="relative">
                 <textarea
                   value={input}
-                  onChange={(e) => setInput(e.target.value)}
+                  onChange={(e) => {
+                    setInput(e.target.value);
+                    adjustTextareaHeight(e.target);
+                  }}
                   onKeyPress={(e) => e.key === 'Enter' && !e.shiftKey && handleConvert()}
                   placeholder="Enter Old Saxon text (max. 500 characters)"
                   maxLength={500}
                   rows={1}
                   className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-lg pr-12 resize-none overflow-hidden"
                   style={{ minHeight: '3rem' }}
-                  onInput={(e) => {
-                    e.target.style.height = '3rem';
-                    e.target.style.height = e.target.scrollHeight + 'px';
-                  }}
                 />
                 {input && (
                   <button
-                    onClick={() => setInput('')}
+                    onClick={() => {
+                      setInput('');
+                      // Reset height when clearing
+                      const textarea = document.querySelector('textarea');
+                      if (textarea) {
+                        textarea.style.height = '3rem';
+                      }
+                    }}
                     className="absolute right-2 top-3 p-2 hover:bg-white/10 rounded-lg transition-colors"
                     title="Clear input"
                   >

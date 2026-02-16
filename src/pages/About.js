@@ -106,7 +106,7 @@ export default function About() {
             <div className="bg-white/5 rounded-lg p-6 border border-white/10 opacity-60">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-2">Noun Declinator</h3>
+                  <h3 className="text-2xl font-semibold text-white mb-2">Declinator</h3>
                   <p className="text-red-100">Coming soon: Generate full declension tables for Old Saxon nouns</p>
                 </div>
                 <span className="text-red-300 text-sm font-medium">Coming Soon</span>
@@ -116,7 +116,7 @@ export default function About() {
             <div className="bg-white/5 rounded-lg p-6 border border-white/10 opacity-60">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-2">Verb Conjugator</h3>
+                  <h3 className="text-2xl font-semibold text-white mb-2">Conjugator</h3>
                   <p className="text-red-100">Coming soon: Full conjugation tables for strong and weak verbs</p>
                 </div>
                 <span className="text-red-300 text-sm font-medium">Coming Soon</span>

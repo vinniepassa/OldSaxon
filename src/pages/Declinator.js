@@ -26,7 +26,7 @@ export default function NounDeclinator() {
             Coming Soon
           </h2>
           <p className="text-red-100 text-center text-lg mb-6">
-            The Noun Declinator tool is currently under development. This tool will allow you to 
+            The Declinator tool is currently under development. This tool will allow you to 
             generate complete declension tables for Old Saxon nouns across all cases, numbers, and 
             genders.
           </p>

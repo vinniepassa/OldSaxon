@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { BookOpen, Type, Table, Languages, Repeat } from 'lucide-react';
 import About from './pages/About';
 import IPAConverter from './pages/IPAConverter';
-import NounDeclinator from './pages/NounDeclinator';
-import VerbConjugator from './pages/VerbConjugator';
+import Declinator from './pages/Declinator';
+import Conjugator from './pages/Conjugator';
 import Translator from './pages/Translator';
 
 function Navigation() {
@@ -13,8 +13,8 @@ function Navigation() {
   const navItems = [
     { path: '/', label: 'About', icon: BookOpen },
     { path: '/ipa-converter', label: 'IPA Converter', icon: Type },
-    { path: '/noun-declinator', label: 'Noun Declinator', icon: Table },
-    { path: '/verb-conjugator', label: 'Verb Conjugator', icon: Repeat },
+    { path: '/noun-declinator', label: 'Declinator', icon: Table },
+    { path: '/verb-conjugator', label: 'Conjugator', icon: Repeat },
     { path: '/translator', label: 'Translator', icon: Languages },
   ];
 
@@ -62,8 +62,8 @@ function App() {
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/ipa-converter" element={<IPAConverter />} />
-          <Route path="/noun-declinator" element={<NounDeclinator />} />
-          <Route path="/verb-conjugator" element={<VerbConjugator />} />
+          <Route path="/noun-declinator" element={<Declinator />} />
+          <Route path="/verb-conjugator" element={<Conjugator />} />
           <Route path="/translator" element={<Translator />} />
         </Routes>
       </div>

@@ -10,7 +10,7 @@ export default function VerbConjugator() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-2">
-            Old Saxon Verb Conjugator
+            Old Saxon Conjugator
           </h1>
           <p className="text-red-200 text-lg">
             Generate full conjugation tables for Old Saxon verbs

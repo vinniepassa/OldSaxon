@@ -36,8 +36,8 @@ export default function About() {
             <p>
               The most significant surviving text in Old Saxon is the <em>Hēliand</em> (meaning "Savior"), 
               an epic poem from the 9th century that retells the Gospel narrative in alliterative verse, 
-              adapting Christian themes to Germanic warrior culture. Other important texts include the 
-              <em>Genesis fragment</em> and various shorter religious and legal documents.
+              adapting Christian themes to Germanic warrior culture. Other important texts include the <em>Genesis</em> 
+              fragment and various shorter religious and legal documents.
             </p>
             <p>
               Old Saxon is particularly valuable to linguists studying the development of Germanic languages, 

@@ -64,8 +64,8 @@ export default function About() {
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-2">Grammar</h3>
               <p className="text-red-100 text-sm">
-                Features complex inflectional morphology with four cases (nominative, accusative, 
-                genitive, dative), three genders, and strong/weak noun declensions.
+                Features complex inflectional morphology with five cases (nominative, accusative, 
+                genitive, dative, instrumental), three genders, and strong/weak noun declensions.
               </p>
             </div>
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
@@ -107,7 +107,7 @@ export default function About() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-2xl font-semibold text-white mb-2">Declinator</h3>
-                  <p className="text-red-100">Coming soon: Generate full declension tables for Old Saxon nouns</p>
+                  <p className="text-red-100">Coming soon: Generate full declension tables</p>
                 </div>
                 <span className="text-red-300 text-sm font-medium">Coming Soon</span>
               </div>

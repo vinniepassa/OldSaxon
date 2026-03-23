@@ -89,8 +89,8 @@ export default function VerbConjugator() {
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/20">
           <h3 className="text-xl font-semibold text-white mb-4">Example Verbs</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {['helpan (to help)', 'werdan (to become)', 'gangan (to go)', 
-              'wesan (to be)', 'habbian (to have)', 'saggan (to say)'].map((verb, idx) => (
+            {['helpan (to help)', 'werthan (to become)', 'gangan (to go)', 
+              'wesan (to be)', 'hėbbian (to have)', 'sėggian (to say)'].map((verb, idx) => (
               <div 
                 key={idx}
                 className="bg-white/5 rounded-lg p-3 border border-white/10 text-center"

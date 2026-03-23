@@ -13,7 +13,7 @@ export default function NounDeclinator() {
             Old Saxon Declinator
           </h1>
           <p className="text-red-200 text-lg">
-            Generate full declension tables for Old Saxon nouns
+            Generate full declension tables for Old Saxon declinable parts of speech
           </p>
         </div>
 
@@ -27,7 +27,7 @@ export default function NounDeclinator() {
           </h2>
           <p className="text-red-100 text-center text-lg mb-6">
             The Declinator tool is currently under development. This tool will allow you to 
-            generate complete declension tables for Old Saxon nouns across all cases, numbers, and 
+            generate complete declension tables for Old Saxon nouns, pronouns, adjectives, determiners, and numerals across all cases, numbers, and 
             genders.
           </p>
           
@@ -40,7 +40,7 @@ export default function NounDeclinator() {
             <ul className="space-y-2 text-red-100">
               <li className="flex items-start">
                 <span className="text-red-400 mr-2">•</span>
-                <span>Support for strong and weak noun declensions</span>
+                <span>Support for strong and weak declensions</span>
               </li>
               <li className="flex items-start">
                 <span className="text-red-400 mr-2">•</span>
@@ -48,7 +48,7 @@ export default function NounDeclinator() {
               </li>
               <li className="flex items-start">
                 <span className="text-red-400 mr-2">•</span>
-                <span>Four cases: nominative, accusative, genitive, dative</span>
+                <span>All five cases: nominative, accusative, genitive, dative, instrumental</span>
               </li>
               <li className="flex items-start">
                 <span className="text-red-400 mr-2">•</span>

@@ -127,15 +127,15 @@ export default function Translator() {
           <div className="space-y-3">
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
               <div className="text-red-200 mb-1">Old Saxon:</div>
-              <div className="text-white font-medium mb-2">Ik bium thē hōld</div>
+              <div className="text-white font-medium mb-2">Thô warð thiu tîd kuman</div>
               <div className="text-red-200 mb-1">English:</div>
-              <div className="text-white">I am loyal to you</div>
+              <div className="text-white">The time was then come</div>
             </div>
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
               <div className="text-red-200 mb-1">Old Saxon:</div>
-              <div className="text-white font-medium mb-2">Thiu sunna skīnit</div>
+              <div className="text-white font-medium mb-2">Sie sprekad wîslîk word, thoh iro werk ne dugin</div>
               <div className="text-red-200 mb-1">English:</div>
-              <div className="text-white">The sun shines</div>
+              <div className="text-white">They speak wise words, but their works are worth naught</div>
             </div>
           </div>
         </div>

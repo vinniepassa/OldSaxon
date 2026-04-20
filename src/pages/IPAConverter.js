@@ -158,6 +158,7 @@ function processText(text) {
   text = text.replace(/[0-9]/g, '');
   
   // Split on whitespace and punctuation, but preserve them
+  // eslint-disable-next-line no-useless-escape
   const tokens = text.split(/(\s+|[.,·;:!?'\[\]()]+)/);
   
   return tokens.map(token => {

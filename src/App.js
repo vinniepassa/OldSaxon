@@ -24,7 +24,7 @@ function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo/Title */}
           <Link to="/" className="flex items-center space-x-2">
-            <BookOpen className="text-red-400" size={28} />
+            <img src="/favicon.ico" alt="logo" style={{ width: 28, height: 28 }} />
             <span className="text-white font-bold text-xl hidden sm:block">Old Saxon Tools</span>
           </Link>
           
